@@ -6,10 +6,6 @@ app.filter('to_trusted', ['$sce', function($sce){
 		};
 	}]);
 
-app.filter('reverse', ['', function() {
-
-}]);
-
 // Add a controller
 app.controller( 'AppCtrl', ['$scope', '$http', function( $scope, $http ) {
 
@@ -25,4 +21,6 @@ app.controller( 'AppCtrl', ['$scope', '$http', function( $scope, $http ) {
 	success( function( data, status, headers, config ) {
 		$scope.posts = data;
 	});
+
+
 }]);
