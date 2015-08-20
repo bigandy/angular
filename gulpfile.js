@@ -4,7 +4,8 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	concat = require('gulp-concat'),
 	Server = require('karma').Server,
-	serve = require('gulp-serve');
+	serve = require('gulp-serve'),
+	sass = require('gulp-sass');
 
 
 gulp.task('js', function () {
@@ -14,6 +15,14 @@ gulp.task('js', function () {
 	.pipe(uglify().on('error', gutil.log))
 	.pipe(concat('script.min.js'))
 	.pipe(gulp.dest('build/js'));
+});
+
+gulp.task('sass', function () {
+	gulp.src([
+		'bower_components/bootstrap/dist/css/bootstrap.min.css'
+	])
+	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	.pipe(gulp.dest('./css'));
 });
 
 gulp.task('serve', serve({
