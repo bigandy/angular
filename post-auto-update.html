@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html lang="en" ng-app="app">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
 	<title>Angular</title>
 
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-	<h1>Pulling Posts from big-andy.co.uk using WP API and Angular</h1>
+	<header>
+		<div class="bd-pageheader">
+			<h1>Pulling Posts from big-andy.co.uk using WP API and Angular</h1>
+		</div>
+	</header>
+
+
 	<div ng-controller="AppCtrl as ctrl">
 		<label for="postsNumber">How Many Posts?</label>
-		<input id="postsNumber" type="text"
-			ng-model="ctrl.number"
-			ng-change="change()"
+		<input id="postsNumber"
+			   type="number"
+			   min="1"
+			   max="50"
+			   ng-model="ctrl.number"
+			   ng-change="change()"
+
 			/>
 
 		<article class="post" ng-repeat="post in posts">

@@ -12,7 +12,7 @@ app.controller( 'AppCtrl', ['$scope', '$http', function( $scope, $http ) {
 		pendingTask;
 
 	if ($scope.ctrl.number === undefined) {
-		$scope.ctrl.number = "10";
+		$scope.ctrl.number = 10;
 		fetch();
 	}
 

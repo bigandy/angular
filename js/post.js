@@ -16,11 +16,9 @@ app.controller( 'AppCtrl', ['$scope', '$http', function( $scope, $http ) {
 		url: 'https://big-andy.co.uk/wp-json/wp/v2/posts',
 		params: {
 			'filter[posts_per_page]' : 10
-		},
+		}
 	}).
 	success( function( data, status, headers, config ) {
 		$scope.posts = data;
 	});
-
-
 }]);
