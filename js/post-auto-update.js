@@ -11,8 +11,8 @@ app.controller( 'AppCtrl', ['$scope', '$http', function( $scope, $http ) {
 	var app = this,
 		pendingTask;
 
-	if ($scope.number === undefined) {
-		$scope.number = "10";
+	if ($scope.ctrl.number === undefined) {
+		$scope.ctrl.number = "10";
 		fetch();
 	}
 
@@ -32,7 +32,7 @@ app.controller( 'AppCtrl', ['$scope', '$http', function( $scope, $http ) {
 			method: 'GET',
 			url: 'https://big-andy.co.uk/wp-json/wp/v2/posts',
 			params: {
-				'filter[posts_per_page]' : $scope.number
+				'filter[posts_per_page]' : $scope.ctrl.number
 			}
 		}).
 		success( function( data, status, headers, config ) {
