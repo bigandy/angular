@@ -11,10 +11,10 @@ app.controller( 'AppCtrl', ['$scope', '$http', function( $scope, $http ) {
 	var app = this,
 		pendingTask;
 
-	if ($scope.ctrl.number === undefined) {
-		$scope.ctrl.number = 10;
-		fetch();
-	}
+	//if ($scope.ctrl.number === undefined) {
+	//	$scope.ctrl.number = 10;
+	//	fetch();
+	//}
 
 
 	// Change the number of posts if the number in the input is changed
