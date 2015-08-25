@@ -31,6 +31,10 @@ angular
 				templateUrl: 'views/posts.html',
 				controller: 'PostsCtrl'
 			})
+			.when('/posts-auto', {
+				templateUrl: 'views/posts-auto.html',
+				controller: 'PostsAutoCtrl'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
